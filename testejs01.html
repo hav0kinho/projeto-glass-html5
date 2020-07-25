@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function acendeLampada(){
-            document.getElementById("luz").src = "_imagens/lampada-acesa.jpg";
-        }
-        function apagaLampada(){
-            document.getElementById("luz").src = "_imagens/lampada-apagada.jpg";
-        }
-        function quebraLampada(){
-            document.getElementById("luz").src = "_imagens/lampada-quebrada.jpg";
+        var quebrada = false;
+        function mudaLampada(tipo){
+            if(!quebrada){
+                document.getElementById("lampada").src = "_imagens/" + tipo + ".jpg";
+                if(tipo == 'lampada-quebrada'){
+                    quebrada = true;
+                }
+            }
         }
     </script>
 </head>
 <body>
-    <h1>Acenda a lâmpada</h1>
-    <img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="acendeLampada()" onmouseout="apagaLampada()" onclick="quebraLampada()"/>
+    <h1>Acende Lâmpada</h1>
+    <img src="_imagens\lampada-apagada.jpg" id="lampada" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')"/>
 </body>
 </html>
