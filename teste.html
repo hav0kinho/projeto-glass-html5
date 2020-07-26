@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var quebrada = false;
+        function mudaImagem(imagem){
+            if(quebrada == false){
+                document.getElementById("lampada").src = imagem;
+                if(imagem =='_imagens/lampada-quebrada.jpg'){
+                quebrada= true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Acende Lampada</h1>
+    <img id="lampada" src="_imagens\lampada-apagada.jpg" alt="Lampada site Google Glass" onmouseover="mudaImagem('_imagens/lampada-acesa.jpg')"onclick="mudaImagem('_imagens/lampada-quebrada.jpg')" onmouseout="mudaImagem('_imagens/lampada-apagada.jpg')">
+</body>
+</html>
